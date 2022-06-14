@@ -17,7 +17,7 @@ class UpdateUserRequest extends FormRequest
     {
         /** @var User $user */
         $user = $this->user();
-        return $user->tokenCan('update-user');
+        return $user && $user->tokenCan('update-user');
     }
 
     /**
@@ -29,7 +29,7 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required',
-            'email' => 'sometimes|required',
+            'email' => 'sometimes|required|email',
             'password' => ['sometimes', 'required', Password::default()->uncompromised()],
         ];
     }

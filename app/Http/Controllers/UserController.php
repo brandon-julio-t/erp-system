@@ -7,7 +7,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\UseCases\Users\CreateUserUseCase;
-use App\UseCases\Users\DeleteUserUserCase;
+use App\UseCases\Users\DeleteUserUseCase;
 use App\UseCases\Users\GetAllUsersUseCase;
 use App\UseCases\Users\GetCurrentUserUseCase;
 use App\UseCases\Users\GetOneUserByIDUseCase;
@@ -23,12 +23,14 @@ class UserController extends Controller
         private readonly GetOneUserByIDUseCase $getOneUserByIDUseCase,
         private readonly CreateUserUseCase $createUserUseCase,
         private readonly UpdateUserUseCase $updateUserUseCase,
-        private readonly DeleteUserUserCase $deleteUserUserCase,
+        private readonly DeleteUserUseCase $deleteUserUseCase,
         private readonly ResponseFactory $responseFactory,
     )
     {
         $this->middleware('auth:api');
+        $this->middleware('scope:create-user')->only(['store']);
         $this->middleware('scope:read-user')->only(['me', 'index', 'show']);
+        $this->middleware('scope:update-user')->only(['update']);
         $this->middleware('scope:delete-user')->only(['destroy']);
     }
 
@@ -107,7 +109,7 @@ class UserController extends Controller
      */
     public function destroy($id): Response
     {
-        $entity = $this->deleteUserUserCase->execute(compact('id'));
+        $entity = $this->deleteUserUseCase->execute(compact('id'));
         $content = UserResource::make($entity);
         return $this->responseFactory->create($content);
     }

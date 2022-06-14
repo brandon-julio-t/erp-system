@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class DeleteUserUserCase implements UseCase
+class DeleteUserUseCase implements UseCase
 {
     public function __construct(private readonly GetOneUserByIDUseCase $getOneUserByIDUseCase)
     {

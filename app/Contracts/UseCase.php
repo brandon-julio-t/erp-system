@@ -2,8 +2,7 @@
 
 namespace App\Contracts;
 
-interface
-UseCase
+interface UseCase
 {
     function execute(mixed $payload = null): mixed;
 }

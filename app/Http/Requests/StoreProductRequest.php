@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Password;
 
-class StoreUserRequest extends FormRequest
+class StoreProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,7 +16,7 @@ class StoreUserRequest extends FormRequest
     {
         /** @var User $user */
         $user = $this->user();
-        return $user && $user->tokenCan('create-user');
+        return $user && $user->tokenCan('create-product');
     }
 
     /**
@@ -29,8 +28,8 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
-            'password' => ['required', Password::default()->uncompromised()],
+            'description' => 'required',
+            'price' => 'required|numeric',
         ];
     }
 }

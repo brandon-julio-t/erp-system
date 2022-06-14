@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use JsonSerializable;
 
-class UserResource extends JsonResource
+class ProductResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,27 +21,27 @@ class UserResource extends JsonResource
             ...parent::toArray($request),
             '_links' => [
                 'index' => [
-                    'href' => route('users.index'),
+                    'href' => route('products.index'),
                     'ref' => 'index',
                     'type' => ['GET', 'HEAD'],
                 ],
                 'self' => [
-                    'href' => route('users.show', $this),
+                    'href' => route('products.show', $this),
                     'ref' => 'self',
                     'type' => ['GET', 'HEAD'],
                 ],
                 'create' => [
-                    'href' => route('users.store', $this),
+                    'href' => route('products.store', $this),
                     'ref' => 'self',
                     'type' => 'POST',
                 ],
                 'update' => [
-                    'href' => route('users.update', $this),
+                    'href' => route('products.update', $this),
                     'ref' => 'self',
                     'type' => ['PUT', 'PATCH'],
                 ],
                 'delete' => [
-                    'href' => route('users.destroy', $this),
+                    'href' => route('products.destroy', $this),
                     'ref' => 'self',
                     'type' => 'DELETE',
                 ],

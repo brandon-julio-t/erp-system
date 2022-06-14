@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Password;
 
-class StoreUserRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,7 +16,7 @@ class StoreUserRequest extends FormRequest
     {
         /** @var User $user */
         $user = $this->user();
-        return $user && $user->tokenCan('create-user');
+        return $user && $user->tokenCan('update-product');
     }
 
     /**
@@ -25,12 +24,12 @@ class StoreUserRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => ['required', Password::default()->uncompromised()],
+            'name' => 'sometimes|required',
+            'description' => 'sometimes|required',
+            'price' => 'sometimes|required|numeric',
         ];
     }
 }

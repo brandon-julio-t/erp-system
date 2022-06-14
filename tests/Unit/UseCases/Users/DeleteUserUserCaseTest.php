@@ -2,15 +2,15 @@
 
 namespace UseCases\Users;
 
-use App\UseCases\Users\DeleteUserUserCase;
+use App\UseCases\Users\DeleteUserUseCase;
 use InvalidArgumentException;
 use Tests\TestCase;
 
 class DeleteUserUserCaseTest extends TestCase
 {
-    private DeleteUserUserCase $useCase;
+    private DeleteUserUseCase $useCase;
 
-    public function test_user_deleted()
+    public function test_user_deleted_successfully()
     {
         $payload = [
             $this->user->getKeyName() => $this->user->getKey()
@@ -19,7 +19,7 @@ class DeleteUserUserCaseTest extends TestCase
         $deletedUser = $this->useCase->execute($payload);
 
         $this->assertTrue($this->user->is($deletedUser));
-        $this->assertDatabaseMissing($this->user->getTable(), $payload);
+        $this->assertSoftDeleted($this->user->refresh());
     }
 
     public function test_delete_non_existent_user_throws_exception()
@@ -33,6 +33,6 @@ class DeleteUserUserCaseTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->useCase = $this->app->make(DeleteUserUserCase::class);
+        $this->useCase = $this->app->make(DeleteUserUseCase::class);
     }
 }

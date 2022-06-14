@@ -4,7 +4,7 @@ namespace Http\Controllers;
 
 use App\Models\User;
 use App\UseCases\Users\CreateUserUseCase;
-use App\UseCases\Users\DeleteUserUserCase;
+use App\UseCases\Users\DeleteUserUseCase;
 use App\UseCases\Users\GetAllUsersUseCase;
 use App\UseCases\Users\GetCurrentUserUseCase;
 use App\UseCases\Users\GetOneUserByIDUseCase;
@@ -118,7 +118,7 @@ class UserControllerTest extends TestCase
     public function test_destroy_function_is_correct()
     {
         $this->mock(
-            DeleteUserUserCase::class,
+            DeleteUserUseCase::class,
             fn(MockInterface $mock) => $this->mockUseCase($mock, $this->user),
         );
 

@@ -2,23 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
  * @extends Factory
  */
-class UserFactory extends Factory
+class ProductPurchaseTransactionFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = User::class;
-
     /**
      * Define the model's default state.
      *
@@ -28,9 +21,8 @@ class UserFactory extends Factory
     {
         return [
             'id' => Str::uuid()->toString(),
-            'name' => $this->faker->name,
-            'email' => $this->faker->safeEmail,
-            'password' => Hash::make('password'),
+            'product_id' => Product::query()->inRandomOrder()->first()->getKey(),
+            'user_id' => User::query()->inRandomOrder()->first()->getKey(),
         ];
     }
 }

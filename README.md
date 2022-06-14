@@ -3,7 +3,7 @@
 ## Setup
 
 ```bash
-php artisan migrate:fresh --seed
+php artisan migrate:fresh
 php artisan passport:install --uuids
 php artisan db:seed
 ```
