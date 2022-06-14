@@ -171,17 +171,17 @@
 								},
 								{
 									"key": "username",
-									"value": "",
+									"value": "xjohnston@example.org",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "",
+									"value": "password",
 									"type": "text"
 								},
 								{
 									"key": "scope",
-									"value": "",
+									"value": "update-user read-user read-product update-product delete-product create-product",
 									"type": "text"
 								}
 							]
@@ -312,8 +312,109 @@
 			]
 		},
 		{
-			"name": "User",
+			"name": "Users",
 			"item": [
+				{
+					"name": "Get Current Authenticated User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/users/me",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Current Authenticated User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_URL}}/api/users/me",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "828"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ade34969-a80c-4111-8a21-5808e89e538c\",\n    \"name\": \"Noah Miller\",\n    \"email\": \"Hilton44@gmail.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"updated_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?user=ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
 				{
 					"name": "Get All Users",
 					"request": {
@@ -326,15 +427,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/users",
-							"protocol": "http",
+							"raw": "{{APP_URL}}/api/users",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{APP_URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users"
@@ -438,107 +534,6 @@
 					]
 				},
 				{
-					"name": "Get Current Authenticated User",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{APP_URL}}/api/users/me",
-							"host": [
-								"{{APP_URL}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"me"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get Current Authenticated User",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{APP_URL}}/api/users/me",
-									"host": [
-										"{{APP_URL}}"
-									],
-									"path": [
-										"api",
-										"users",
-										"me"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/8.1.6"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Length",
-									"value": "828"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"ade34969-a80c-4111-8a21-5808e89e538c\",\n    \"name\": \"Noah Miller\",\n    \"email\": \"Hilton44@gmail.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"updated_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?user=ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "Get User by ID",
 					"request": {
 						"method": "GET",
@@ -550,15 +545,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c",
-							"protocol": "http",
+							"raw": "{{APP_URL}}/api/users/ade34969-a80c-4111-8a21-5808e89e538c",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{APP_URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -789,6 +779,137 @@
 					]
 				},
 				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "John Wick",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/2200c172-4d23-45ad-8f63-f2c650c25bc9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"2200c172-4d23-45ad-8f63-f2c650c25bc9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "John Wick",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/2200c172-4d23-45ad-8f63-f2c650c25bc9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"2200c172-4d23-45ad-8f63-f2c650c25bc9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:06:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:06:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "827"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2200c172-4d23-45ad-8f63-f2c650c25bc9\",\n    \"name\": \"John Wick\",\n    \"email\": \"xjohnston@example.org\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n    \"updated_at\": \"2022-06-14T07:06:07.000000Z\",\n    \"deleted_at\": null,\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/2200c172-4d23-45ad-8f63-f2c650c25bc9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?2200c172-4d23-45ad-8f63-f2c650c25bc9\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/2200c172-4d23-45ad-8f63-f2c650c25bc9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/2200c172-4d23-45ad-8f63-f2c650c25bc9\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
@@ -800,15 +921,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf",
-							"protocol": "http",
+							"raw": "{{APP_URL}}/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{APP_URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -896,6 +1012,461 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": \"af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n    \"name\": \"Prof. Jany Crist\",\n    \"email\": \"gerard.brekke@example.org\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-14T04:21:56.000000Z\",\n    \"updated_at\": \"2022-06-14T04:21:56.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/products",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_URL}}/api/products",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:00:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:00:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16437"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"06b93370-bd80-4f50-bfe3-34f50a0babc3\",\n            \"name\": \"Autem libero dolores fuga magnam.\",\n            \"description\": \"Ipsum perferendis recusandae architecto. Ducimus beatae sequi voluptate laboriosam necessitatibus. Ab neque dolor in. Beatae praesentium qui laudantium exercitationem et saepe minima. Quam optio temporibus explicabo a ipsum quis ipsa.\",\n            \"price\": \"1087.03\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/06b93370-bd80-4f50-bfe3-34f50a0babc3\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?06b93370-bd80-4f50-bfe3-34f50a0babc3\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/06b93370-bd80-4f50-bfe3-34f50a0babc3\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/06b93370-bd80-4f50-bfe3-34f50a0babc3\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"07975011-364f-4a69-9893-7c0323b78fa6\",\n            \"name\": \"Ea blanditiis dolores quis omnis ipsum sequi.\",\n            \"description\": \"Voluptas omnis voluptatum tenetur ipsum et. Dicta est blanditiis quam accusantium. Et et repudiandae praesentium suscipit eum.\",\n            \"price\": \"280655.65\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/07975011-364f-4a69-9893-7c0323b78fa6\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?07975011-364f-4a69-9893-7c0323b78fa6\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/07975011-364f-4a69-9893-7c0323b78fa6\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/07975011-364f-4a69-9893-7c0323b78fa6\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"09d44d98-23a4-4ca6-9ab1-1b4da7e72a8a\",\n            \"name\": \"Veniam corporis omnis tempore fuga nemo.\",\n            \"description\": \"Porro aut saepe officiis. Rem qui aut excepturi ea molestiae nemo error. Nemo excepturi placeat explicabo quia nesciunt explicabo.\",\n            \"price\": \"3529.50\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/09d44d98-23a4-4ca6-9ab1-1b4da7e72a8a\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?09d44d98-23a4-4ca6-9ab1-1b4da7e72a8a\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/09d44d98-23a4-4ca6-9ab1-1b4da7e72a8a\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/09d44d98-23a4-4ca6-9ab1-1b4da7e72a8a\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"10ffbb12-df2a-46e5-ba5e-dcf6b8cfdc36\",\n            \"name\": \"Et perspiciatis et eos et qui laborum.\",\n            \"description\": \"Omnis tempora nesciunt occaecati quam. Omnis quam facere laboriosam quam. A aut aut non earum quidem hic libero. Et mollitia necessitatibus laborum quod quos esse ut.\",\n            \"price\": \"36.05\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/10ffbb12-df2a-46e5-ba5e-dcf6b8cfdc36\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?10ffbb12-df2a-46e5-ba5e-dcf6b8cfdc36\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/10ffbb12-df2a-46e5-ba5e-dcf6b8cfdc36\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/10ffbb12-df2a-46e5-ba5e-dcf6b8cfdc36\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"16b55c30-d90d-4488-809a-8c78900e82d6\",\n            \"name\": \"Blanditiis quia ipsa impedit voluptas quis molestias.\",\n            \"description\": \"Qui consectetur dignissimos distinctio laudantium magni est. Facere esse et maiores ducimus quia qui. Ut laboriosam illum est excepturi. Possimus aliquam est quidem et voluptatem quidem. Ducimus exercitationem incidunt est laboriosam delectus architecto.\",\n            \"price\": \"45984.76\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/16b55c30-d90d-4488-809a-8c78900e82d6\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?16b55c30-d90d-4488-809a-8c78900e82d6\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/16b55c30-d90d-4488-809a-8c78900e82d6\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/16b55c30-d90d-4488-809a-8c78900e82d6\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"1aadb067-040f-42cb-b9af-e377928f5bcd\",\n            \"name\": \"Aut reprehenderit exercitationem quidem quod.\",\n            \"description\": \"Suscipit expedita enim nemo est ipsam inventore quam. Voluptate ex veritatis aliquam beatae cupiditate sed doloremque. Quae aliquid sit voluptate facilis et est. Eum dolor rerum magni sed alias quae harum.\",\n            \"price\": \"20.06\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1aadb067-040f-42cb-b9af-e377928f5bcd\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?1aadb067-040f-42cb-b9af-e377928f5bcd\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1aadb067-040f-42cb-b9af-e377928f5bcd\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1aadb067-040f-42cb-b9af-e377928f5bcd\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"1baa4c1c-95c8-4444-bc05-5c191477c0c4\",\n            \"name\": \"Voluptas minima exercitationem reiciendis consequatur quo cupiditate ut.\",\n            \"description\": \"Dolorem quod fuga voluptatem reprehenderit ut. Quia provident dolor quisquam molestiae nam iusto. Iusto vero voluptatum numquam aliquam odio. Velit quidem ab ut doloribus et consequatur voluptatem.\",\n            \"price\": \"7085974.96\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1baa4c1c-95c8-4444-bc05-5c191477c0c4\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?1baa4c1c-95c8-4444-bc05-5c191477c0c4\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1baa4c1c-95c8-4444-bc05-5c191477c0c4\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1baa4c1c-95c8-4444-bc05-5c191477c0c4\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"1c88cc91-bd1c-4e1b-b979-7d32d49494df\",\n            \"name\": \"Dicta id qui molestiae atque.\",\n            \"description\": \"Autem eaque et porro minima voluptatem unde. Eius et distinctio cumque aut aliquam ab. Iure veritatis ipsa ipsam blanditiis debitis optio tenetur.\",\n            \"price\": \"23656939.44\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1c88cc91-bd1c-4e1b-b979-7d32d49494df\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?1c88cc91-bd1c-4e1b-b979-7d32d49494df\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1c88cc91-bd1c-4e1b-b979-7d32d49494df\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1c88cc91-bd1c-4e1b-b979-7d32d49494df\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"1f9b8b7a-c86f-4e1f-94e6-2bc601ceddbe\",\n            \"name\": \"Quisquam facere et qui asperiores unde.\",\n            \"description\": \"Distinctio laudantium dolorum iusto rem iusto distinctio. Voluptates sunt exercitationem architecto et laudantium repudiandae. Officia vel voluptatem odio ut eum est.\",\n            \"price\": \"394095109.52\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1f9b8b7a-c86f-4e1f-94e6-2bc601ceddbe\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?1f9b8b7a-c86f-4e1f-94e6-2bc601ceddbe\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1f9b8b7a-c86f-4e1f-94e6-2bc601ceddbe\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/1f9b8b7a-c86f-4e1f-94e6-2bc601ceddbe\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"22d72207-c4e3-4394-bfaf-9426550ec2f1\",\n            \"name\": \"Enim quam eligendi illo reprehenderit vel quia architecto.\",\n            \"description\": \"Aspernatur exercitationem et praesentium. Illum illo asperiores ullam dolor doloremque impedit ut corporis. Laborum molestiae et cupiditate libero vel dolores. Distinctio ea facere enim inventore.\",\n            \"price\": \"503.49\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/22d72207-c4e3-4394-bfaf-9426550ec2f1\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?22d72207-c4e3-4394-bfaf-9426550ec2f1\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/22d72207-c4e3-4394-bfaf-9426550ec2f1\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/22d72207-c4e3-4394-bfaf-9426550ec2f1\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"2873e058-14f9-4f0d-a004-e503b434b3bf\",\n            \"name\": \"Quia cupiditate autem corporis repellat dolores nostrum ducimus ab.\",\n            \"description\": \"Autem voluptatem voluptatem sed ab. Aut dolores porro sed impedit asperiores qui maiores. Architecto at maxime dolorum eos.\",\n            \"price\": \"4.58\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/2873e058-14f9-4f0d-a004-e503b434b3bf\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?2873e058-14f9-4f0d-a004-e503b434b3bf\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/2873e058-14f9-4f0d-a004-e503b434b3bf\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/2873e058-14f9-4f0d-a004-e503b434b3bf\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"3736c7e5-1010-4f6d-bafe-aaf1e6a32af7\",\n            \"name\": \"Sed accusantium adipisci expedita rerum qui occaecati delectus.\",\n            \"description\": \"Itaque sed ut tempora accusantium possimus ut neque. Ut mollitia consequatur corrupti eum. Iste dolores sit cum sunt debitis. Quia quia veniam perspiciatis quisquam maiores minima.\",\n            \"price\": \"69002232.41\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/3736c7e5-1010-4f6d-bafe-aaf1e6a32af7\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?3736c7e5-1010-4f6d-bafe-aaf1e6a32af7\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/3736c7e5-1010-4f6d-bafe-aaf1e6a32af7\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/3736c7e5-1010-4f6d-bafe-aaf1e6a32af7\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"41dbfb60-4d15-4897-bfca-8fa2cabd1391\",\n            \"name\": \"Aut assumenda eveniet dolorem autem nostrum ullam.\",\n            \"description\": \"Molestias nihil rerum id quidem rerum sed iusto. Quibusdam vel id dolor. Est aliquam harum non. At animi tempora non maiores sit tempora.\",\n            \"price\": \"30.57\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/41dbfb60-4d15-4897-bfca-8fa2cabd1391\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?41dbfb60-4d15-4897-bfca-8fa2cabd1391\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/41dbfb60-4d15-4897-bfca-8fa2cabd1391\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/41dbfb60-4d15-4897-bfca-8fa2cabd1391\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"4a27b7b0-04c9-4c55-bd1c-740c71a3c9db\",\n            \"name\": \"Omnis aliquam similique alias sed.\",\n            \"description\": \"Et at aut inventore nesciunt. Velit ut labore labore accusantium. Accusantium rerum quia voluptatem adipisci deserunt.\",\n            \"price\": \"47.97\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4a27b7b0-04c9-4c55-bd1c-740c71a3c9db\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?4a27b7b0-04c9-4c55-bd1c-740c71a3c9db\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4a27b7b0-04c9-4c55-bd1c-740c71a3c9db\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4a27b7b0-04c9-4c55-bd1c-740c71a3c9db\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"name\": \"Eum velit eos quis ipsum doloremque est aspernatur.\",\n            \"description\": \"Velit itaque repudiandae quis maiores perspiciatis et. Et sit cupiditate vel. Quos qui nulla quis molestiae.\",\n            \"price\": \"62836296.04\",\n            \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n            \"deleted_at\": null,\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products?4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/products?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/products?page=4\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/products?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 4,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/products?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/products?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/products?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/products?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/products?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/products\",\n        \"per_page\": 15,\n        \"to\": 15,\n        \"total\": 50\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_URL}}/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:03:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:03:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "974"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n    \"name\": \"Eum velit eos quis ipsum doloremque est aspernatur.\",\n    \"description\": \"Velit itaque repudiandae quis maiores perspiciatis et. Et sit cupiditate vel. Quos qui nulla quis molestiae.\",\n    \"price\": \"62836296.04\",\n    \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n    \"updated_at\": \"2022-06-14T05:50:54.000000Z\",\n    \"deleted_at\": null,\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/products\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create\": {\n            \"href\": \"http://127.0.0.1:8000/api/products?4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "updated name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "updated description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "69420",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "updated name",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "updated description",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "69420",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:08:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:08:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "840"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n    \"name\": \"updated name\",\n    \"description\": \"updated description\",\n    \"price\": \"69420\",\n    \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n    \"updated_at\": \"2022-06-14T07:08:23.000000Z\",\n    \"deleted_at\": null,\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/products\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create\": {\n            \"href\": \"http://127.0.0.1:8000/api/products?4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"4bbcd798-f93d-444c-a4ce-60ea72f268e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:08:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 07:08:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "868"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n    \"name\": \"updated name\",\n    \"description\": \"updated description\",\n    \"price\": \"69420.00\",\n    \"created_at\": \"2022-06-14T05:50:54.000000Z\",\n    \"updated_at\": \"2022-06-14T07:08:53.000000Z\",\n    \"deleted_at\": \"2022-06-14T07:08:53.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/products\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create\": {\n            \"href\": \"http://127.0.0.1:8000/api/products?4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete\": {\n            \"href\": \"http://127.0.0.1:8000/api/products/4bbcd798-f93d-444c-a4ce-60ea72f268e9\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
 						}
 					]
 				}
