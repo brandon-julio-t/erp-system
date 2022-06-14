@@ -4,7 +4,7 @@
 
 ```bash
 php artisan migrate:fresh --seed
- php artisan passport:install --uuids
+php artisan passport:install --uuids
 php artisan db:seed
 ```
 
