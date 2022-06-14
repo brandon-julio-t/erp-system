@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "acf4708c-4b65-4227-a5d5-197b12b804d2",
+		"name": "ERP System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19104058"
+	},
+	"item": [
+		{
+			"name": "OAuth",
+			"item": [
+				{
+					"name": "Client Grant OAuth Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{PERSONAL_ACCESS_CLIENT_ID}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{PERSONAL_ACCESS_CLIENT_SECRET}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/oauth/token",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Client Grant OAuth Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "{{PERSONAL_ACCESS_CLIENT_ID}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{PERSONAL_ACCESS_CLIENT_SECRET}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "*",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/oauth/token",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jun 2022 08:21:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jun 2022 08:21:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, private"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1092"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 31536000,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5Njg3ZjljOS00NDI1LTQ1OTItYTY1OS1kNGNhM2JjYTMwN2YiLCJqdGkiOiJhY2NkZTA2ODEyOWMzZmRjZmUxYTdjOWFhOTc4NzM1YTc1ZWM1NzU5OWY5NDg3MzM0ZGU3M2EwNWE4YWFmZDVjYWM5ZWYwNWU0Yjk5NDdmNSIsImlhdCI6MTY1NTEwODUwNi4xNzU3MjMsIm5iZiI6MTY1NTEwODUwNi4xNzU3MjgsImV4cCI6MTY4NjY0NDUwNi4wNjM2MzksInN1YiI6IiIsInNjb3BlcyI6WyIqIl19.ScpbRuIqiiwYgTy9T-7lHSpereEDCigBlr8yknV_ck-_cbq5HgG7T1hJhJYsfnUhmwRoUEvg6Xc2cIBZcnGci65fLcig7MP17qggHFxvvqP8AYJGjIc9U0_jwCNCisM1tnttvq2RGFhN5-rQPFCxfkOiF9JRiC4s55zBrkLTwQF9KmbjpYIZHUirq-PaZ6sYe65jLfH_ULb15Ym5v1ZwTdCBgJCciXDSHgb4G2GtU6GLiqLjabTUhDyKWAtMcFeLbIJJXVdxlDcJhmLfobOdyij1a4kefyt-8nkdofELzjMqZKp6sFswF0XVHFWHZhfOXQmPmU26BDz5JE4V6nIAulaLRLG2CbT1yxMXzdHtXUKd03Ee7AjBX1F8YI-iayMQ7NX1WC_roWq8HiYzc4d0lfDIj5pgxIiA3BWoz0C-ZQ-ztm9hURFM6mcJZAEM7UxKhNZv2wHT-1z3s0olvjNEUQvxPcJ4MfyuEHs-R6HU-XTy9vQlMe6bPE7eQZtXyw-raUEViBueQ-cEFmbladpjfg8n791RbIP_e2myZxbwvdb8Lls6nataDPDp4P9u3db6PROpicbJNnWwG3X8OkRYppXfgSTUHErEXM_9A8X5RXUVs4dRd9KHPLkv9sVF2pGwL10Ma6z2mxOPA5t51AUdJgko2wck5ShFQjMi0Is_zyA\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Password Grant OAuth Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{PASSWORD_GRANT_CLIENT_ID}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{PASSWORD_GRANT_CLIENT_SECRET}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/oauth/token",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Password Grant OAuth Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "{{PASSWORD_GRANT_CLIENT_ID}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{PASSWORD_GRANT_CLIENT_SECRET}}",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Hilton44@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "9_lpC2lMS4jv_w1",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "read-user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/oauth/token",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:06:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:06:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, private"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2041"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 31536000,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5Njg3ZTBjMi1lYmUwLTQxYzAtOTI5MC04ZDQ1MmRkNDA1ZjAiLCJqdGkiOiJhNzUyMjJhNjQ0MDliY2NkZGRmMGEzZDA2ZDM3ZTQyOWM4NjkwZWZjZjk2ZTcwZDI4ZjFhNjBkZWIxOWRhM2ZhYTk1ZDNlYjVmMzhjMTQ4YyIsImlhdCI6MTY1NTE3MjM2Ny4yNjA5NCwibmJmIjoxNjU1MTcyMzY3LjI2MDk0MywiZXhwIjoxNjg2NzA4MzY3LjIyNDQ1OSwic3ViIjoiYWRlMzQ5NjktYTgwYy00MTExLThhMjEtNTgwOGU4OWU1MzhjIiwic2NvcGVzIjpbInJlYWQtdXNlciJdfQ.yczJ9ygOTl1j5qWjV74PzS3rWA4PKae8yqvsuLzkbvP7lj-BXitXloQKZtrSCiR8hbyzDv0dv_uzFUDFAuEBNQxDVyXIQjGicsG3cdMdq3_S0W4n2889ljglLQYnBK2MvegF-xueHZpfYtLSBIwcjxqBzDh0qiTphfqDhOJuFk9Ct34aWohggrm3ZpR5cQzvhvsl9C-aQ7obHGDgS_ajf_3u4hi-teyg8fMj1HwLFPol1nKHC8j5MDclI6ssGGOrp_BjUf_eNOxaiYYn2kj99fcFynxM5vSfBAdGUPMeL563YKnqTSfPTGd0qkVNb1Z8JefHoLZ5VCz7P29ZpW8cdoethn2Ax7y0jrID2_p9SNAyQJ-DjJJM7YUUzq3YzZ02ykIkMA-wVkxKiAZQ6t3ia1yMB0PY7OXEFOuQftU-T7vP-fG8JXJDSktXulAHUChTylXu7M2C_cwF5ka8sXbEWNgQLUEEh_aHEJ7qvRJzll7PKe7TLmazbeQdFeBufed4RLrVB8THRSP3S4PH-hbw9PRmOxeRY9JGQubeQdm0p7nasVV6m937p4xqDWQZc8_psx2jFI4UYCL59_QX38hs_k9sQFrC_s7K9vg931_bd6R5g-A4WIxs35jlu42tObrIbJiJKymBe9pqgJAikzq83DUbLqt0NwxqyPe-WrX9W_U\",\n    \"refresh_token\": \"def50200745a655408b251b95031e92842745919e708af9394d390c93155d4522cca90eb34889a405e4aa7e17fd52ae9d9e497e5050e601af721ac1d268bfc52698c1ae3300e9c39c9f1771e220b8489f900cce487d48d6fee26d63e1e2bf33b684f11ea296e7a36c916c72efe0ce6f3194cc9b519bd9b3f10c3b08385eea838917139f7c4062260b6f7677c40148d303e62038fb820bd221f2a1ac01d0f1393eb0500b4c7af5c28a25eaa9ec89ceb55e8390b769ebe3e70a26aad558abd00fc357652290610566b05a2f4338e2854eb39c84d971b21044f4967ba64a0c9e3e9d66ccd285ea9da6f248a7fecb19fc845e5b75c8315643e4f4dfa029df7792ff2954cc36971001d5bc2b89d105c4ed8edb0c84820672984c3cdd12c79aa546b08d7f4c1dd137d956786f27248cb7b35151e177134035771112e899ae675202f83b7a0310492aac89adf94b533313462a28d0f61a54b13c0fb89e87437463ed0069b6de9d6abff623aa0f2954b7723d2938156c786865ff944d403c8f18623e73efe814c8b65dee7e7b82e40d6a117a4aa304e92f001d01bc6bd4ba49ba3014b7755462b28e7b017ef3ba44e14aa8df412d0348277\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:37:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:37:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4762"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"15ad0b78-3850-4d75-8751-c25c65b5bb28\",\n            \"name\": \"fb3b1e18-b24f-4f11-bb35-46575a0c7577\",\n            \"email\": \"procurement@company.com\",\n            \"email_verified_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"created_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"updated_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/15ad0b78-3850-4d75-8751-c25c65b5bb28\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users?15ad0b78-3850-4d75-8751-c25c65b5bb28\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/15ad0b78-3850-4d75-8751-c25c65b5bb28\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/15ad0b78-3850-4d75-8751-c25c65b5bb28\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"90650d5b-fbc1-4385-84ab-c05250932680\",\n            \"name\": \"5ac446a9-0f07-4d1b-85d8-31f33e08c30d\",\n            \"email\": \"cashier@company.com\",\n            \"email_verified_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"created_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"updated_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/90650d5b-fbc1-4385-84ab-c05250932680\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users?90650d5b-fbc1-4385-84ab-c05250932680\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/90650d5b-fbc1-4385-84ab-c05250932680\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/90650d5b-fbc1-4385-84ab-c05250932680\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"name\": \"Noah Miller\",\n            \"email\": \"Hilton44@gmail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-06-13T08:46:09.000000Z\",\n            \"updated_at\": \"2022-06-13T08:46:09.000000Z\",\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users?ade34969-a80c-4111-8a21-5808e89e538c\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"ec8fb8dc-40af-4543-8789-8262db387dce\",\n            \"name\": \"639a5689-a0fa-42bb-81b7-f9e3eaf2c531\",\n            \"email\": \"human.resource@company.com\",\n            \"email_verified_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"created_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"updated_at\": \"2022-06-13T06:55:20.000000Z\",\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ec8fb8dc-40af-4543-8789-8262db387dce\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users?ec8fb8dc-40af-4543-8789-8262db387dce\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ec8fb8dc-40af-4543-8789-8262db387dce\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/ec8fb8dc-40af-4543-8789-8262db387dce\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        },\n        {\n            \"id\": \"fcfa1d25-911d-4988-ab36-48e7edfdaa1a\",\n            \"name\": \"Flora Lueilwitz I\",\n            \"email\": \"Gerald.Cole@gmail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-06-13T08:56:20.000000Z\",\n            \"updated_at\": \"2022-06-13T08:56:20.000000Z\",\n            \"_links\": {\n                \"index\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users\",\n                    \"ref\": \"index\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"self\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/fcfa1d25-911d-4988-ab36-48e7edfdaa1a\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"GET\",\n                        \"HEAD\"\n                    ]\n                },\n                \"create-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users?fcfa1d25-911d-4988-ab36-48e7edfdaa1a\",\n                    \"ref\": \"self\",\n                    \"type\": \"POST\"\n                },\n                \"update-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/fcfa1d25-911d-4988-ab36-48e7edfdaa1a\",\n                    \"ref\": \"self\",\n                    \"type\": [\n                        \"PUT\",\n                        \"PATCH\"\n                    ]\n                },\n                \"delete-user\": {\n                    \"href\": \"http://127.0.0.1:8000/api/users/fcfa1d25-911d-4988-ab36-48e7edfdaa1a\",\n                    \"ref\": \"self\",\n                    \"type\": \"DELETE\"\n                }\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/users\",\n        \"per_page\": 15,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Current Authenticated User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/users/me",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Current Authenticated User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_URL}}/api/users/me",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 02:42:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "828"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ade34969-a80c-4111-8a21-5808e89e538c\",\n    \"name\": \"Noah Miller\",\n    \"email\": \"Hilton44@gmail.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"updated_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?user=ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"ade34969-a80c-4111-8a21-5808e89e538c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"ade34969-a80c-4111-8a21-5808e89e538c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:58:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:58:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "823"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ade34969-a80c-4111-8a21-5808e89e538c\",\n    \"name\": \"Noah Miller\",\n    \"email\": \"Hilton44@gmail.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"updated_at\": \"2022-06-13T08:46:09.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/ade34969-a80c-4111-8a21-5808e89e538c\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "{{$randomFullName}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/users",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "{{$randomFullName}}",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{$randomEmail}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{$randomPassword}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/api/users",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:55:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 03:55:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "802"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d48be4c1-02f5-4159-a610-126acca43ebf\",\n    \"name\": \"Edwin Mitchell\",\n    \"email\": \"Justice70@yahoo.com\",\n    \"updated_at\": \"2022-06-14T03:55:05.000000Z\",\n    \"created_at\": \"2022-06-14T03:55:05.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/d48be4c1-02f5-4159-a610-126acca43ebf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?d48be4c1-02f5-4159-a610-126acca43ebf\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/d48be4c1-02f5-4159-a610-126acca43ebf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/d48be4c1-02f5-4159-a610-126acca43ebf\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"af70bd7f-9080-4a01-9e70-46c3678fbecf"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"af70bd7f-9080-4a01-9e70-46c3678fbecf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 04:23:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jun 2022 04:23:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "835"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n    \"name\": \"Prof. Jany Crist\",\n    \"email\": \"gerard.brekke@example.org\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2022-06-14T04:21:56.000000Z\",\n    \"updated_at\": \"2022-06-14T04:21:56.000000Z\",\n    \"_links\": {\n        \"index\": {\n            \"href\": \"http://127.0.0.1:8000/api/users\",\n            \"ref\": \"index\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"self\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"GET\",\n                \"HEAD\"\n            ]\n        },\n        \"create-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users?af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": \"POST\"\n        },\n        \"update-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": [\n                \"PUT\",\n                \"PATCH\"\n            ]\n        },\n        \"delete-user\": {\n            \"href\": \"http://127.0.0.1:8000/api/users/af70bd7f-9080-4a01-9e70-46c3678fbecf\",\n            \"ref\": \"self\",\n            \"type\": \"DELETE\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{API_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
