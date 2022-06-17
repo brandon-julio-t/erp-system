@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Products;
+namespace App\UseCases\Product;
 
 use App\Contracts\UseCase;
 use App\Models\Product;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class GetOneProductByIDUseCase implements UseCase
+class GetOneProductByIdUseCase implements UseCase
 {
     function execute(mixed $payload = null): Builder|Model
     {

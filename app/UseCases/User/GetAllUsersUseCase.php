@@ -1,15 +1,15 @@
 <?php
 
-namespace App\UseCases\Products;
+namespace App\UseCases\User;
 
 use App\Contracts\UseCase;
-use App\Models\Product;
+use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
-class GetAllProductsUseCase implements UseCase
+class GetAllUsersUseCase implements UseCase
 {
     function execute(mixed $payload = null): LengthAwarePaginator
     {
-        return Product::query()->paginate();
+        return User::query()->paginate();
     }
 }

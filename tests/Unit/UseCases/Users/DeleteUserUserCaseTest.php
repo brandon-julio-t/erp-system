@@ -2,7 +2,7 @@
 
 namespace UseCases\Users;
 
-use App\UseCases\Users\DeleteUserUseCase;
+use App\UseCases\User\DeleteUserUseCase;
 use InvalidArgumentException;
 use Tests\TestCase;
 

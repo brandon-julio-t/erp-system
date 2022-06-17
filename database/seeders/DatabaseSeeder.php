@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
-use App\Models\ProductPurchaseTransaction;
+use App\Models\PurchaseTransactionDetail;
+use App\Models\PurchaseTransactionHeader;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->count(3)->create();
-        Product::factory()->count(50)->create();
-        ProductPurchaseTransaction::factory()->count(200)->create();
+        Product::factory()->count(20)->create();
+        PurchaseTransactionHeader::factory()
+            ->count(100)
+            ->has(PurchaseTransactionDetail::factory()->count(5))
+            ->create();
     }
 }

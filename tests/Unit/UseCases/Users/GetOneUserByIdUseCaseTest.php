@@ -2,13 +2,13 @@
 
 namespace UseCases\Users;
 
-use App\UseCases\Users\GetOneUserByIDUseCase;
+use App\UseCases\User\GetOneUserByIdUseCase;
 use InvalidArgumentException;
 use Tests\TestCase;
 
-class GetOneUserUseCaseTest extends TestCase
+class GetOneUserByIdUseCaseTest extends TestCase
 {
-    private GetOneUserByIDUseCase $useCase;
+    private GetOneUserByIdUseCase $useCase;
 
     public function test_can_handle_null_payload()
     {
@@ -35,6 +35,6 @@ class GetOneUserUseCaseTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->useCase = $this->app->make(GetOneUserByIDUseCase::class);
+        $this->useCase = $this->app->make(GetOneUserByIdUseCase::class);
     }
 }

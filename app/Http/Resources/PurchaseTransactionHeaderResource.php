@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use JsonSerializable;
 
-class ProductResource extends JsonResource
+class PurchaseTransactionHeaderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,21 +21,26 @@ class ProductResource extends JsonResource
             ...parent::toArray($request),
             '_links' => [
                 'index' => [
-                    'href' => route('products.index'),
+                    'href' => route('purchase-transactions.index'),
                     'ref' => 'index',
                     'type' => ['GET', 'HEAD'],
                 ],
                 'self' => [
-                    'href' => route('products.show', $this),
+                    'href' => route('purchase-transactions.show', $this),
                     'ref' => 'self',
                     'type' => ['GET', 'HEAD'],
                 ],
-                'update' => [
-                    'href' => route('products.update', $this),
+                'create' => [
+                    'href' => route('purchase-transactions.store', $this),
                     'ref' => 'self',
-                    'type' => ['PUT', 'PATCH'],
+                    'type' => 'POST',
                 ],
-            ],
+                'delete' => [
+                    'href' => route('purchase-transactions.destroy', $this),
+                    'ref' => 'self',
+                    'type' => 'DELETE',
+                ],
+            ]
         ];
     }
 }

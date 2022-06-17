@@ -3,13 +3,13 @@
 namespace UseCases\Products;
 
 use App\Models\Product;
-use App\UseCases\Products\GetOneProductByIDUseCase;
+use App\UseCases\Product\GetOneProductByIdUseCase;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Tests\TestCase;
 
-class GetOneProductByIDUseCaseTest extends TestCase
+class GetOneProductByIdUseCaseTest extends TestCase
 {
-    private GetOneProductByIDUseCase $useCase;
+    private GetOneProductByIdUseCase $useCase;
 
     public function test_can_handle_invalid_payload()
     {
@@ -35,6 +35,6 @@ class GetOneProductByIDUseCaseTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->useCase = $this->app->make(GetOneProductByIDUseCase::class);
+        $this->useCase = $this->app->make(GetOneProductByIdUseCase::class);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Users;
+namespace App\UseCases\User;
 
 use App\Contracts\UseCase;
 use App\Models\User;
@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use InvalidArgumentException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class GetOneUserByIDUseCase implements UseCase
+class GetOneUserByIdUseCase implements UseCase
 {
     function execute(mixed $payload = null): array|null|Builder|Collection|Model
     {

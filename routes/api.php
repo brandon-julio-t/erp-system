@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseTransactionDetailController;
+use App\Http\Controllers\PurchaseTransactionHeaderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/users/me', [UserController::class, 'me'])->name('users.me');
+Route::middleware('auth:api')->group(function () {
+    Route::get('/users/me', [UserController::class, 'me'])
+        ->name('users.me');
 
-Route::apiResources([
-    'users' => UserController::class,
-    'products' => ProductController::class,
-]);
+    Route::apiResources([
+        'users' => UserController::class,
+        'products' => ProductController::class,
+    ]);
+
+    Route::apiResource('purchase-transactions', PurchaseTransactionHeaderController::class)
+        ->except(['update']);
+
+    Route::apiResource('purchase-transactions.details', PurchaseTransactionDetailController::class)
+        ->except(['store', 'update', 'destroy']);
+});

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Products;
+namespace App\UseCases\Product;
 
 use App\Contracts\UseCase;
 use Illuminate\Database\Eloquent\Builder;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DeleteProductUseCase implements UseCase
 {
-    public function __construct(private readonly GetOneProductByIDUseCase $getOneProductByIDUseCase)
+    public function __construct(private  GetOneProductByIdUseCase $getOneProductByIDUseCase)
     {
     }
 

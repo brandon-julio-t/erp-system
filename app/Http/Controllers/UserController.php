@@ -6,28 +6,27 @@ use App\Factories\ResponseFactory;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
-use App\UseCases\Users\CreateUserUseCase;
-use App\UseCases\Users\DeleteUserUseCase;
-use App\UseCases\Users\GetAllUsersUseCase;
-use App\UseCases\Users\GetCurrentUserUseCase;
-use App\UseCases\Users\GetOneUserByIDUseCase;
-use App\UseCases\Users\UpdateUserUseCase;
+use App\UseCases\User\CreateUserUseCase;
+use App\UseCases\User\DeleteUserUseCase;
+use App\UseCases\User\GetAllUsersUseCase;
+use App\UseCases\User\GetCurrentUserUseCase;
+use App\UseCases\User\GetOneUserByIdUseCase;
+use App\UseCases\User\UpdateUserUseCase;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
     public function __construct(
-        private readonly GetCurrentUserUseCase $getCurrentUserUseCase,
-        private readonly GetAllUsersUseCase $getAllUsersUseCase,
-        private readonly GetOneUserByIDUseCase $getOneUserByIDUseCase,
-        private readonly CreateUserUseCase $createUserUseCase,
-        private readonly UpdateUserUseCase $updateUserUseCase,
-        private readonly DeleteUserUseCase $deleteUserUseCase,
-        private readonly ResponseFactory $responseFactory,
+        private  GetCurrentUserUseCase $getCurrentUserUseCase,
+        private  GetAllUsersUseCase    $getAllUsersUseCase,
+        private  GetOneUserByIdUseCase $getOneUserByIdUseCase,
+        private  CreateUserUseCase     $createUserUseCase,
+        private  UpdateUserUseCase     $updateUserUseCase,
+        private  DeleteUserUseCase     $deleteUserUseCase,
+        private  ResponseFactory       $responseFactory,
     )
     {
-        $this->middleware('auth:api');
         $this->middleware('scope:create-user')->only(['store']);
         $this->middleware('scope:read-user')->only(['me', 'index', 'show']);
         $this->middleware('scope:update-user')->only(['update']);
@@ -81,7 +80,7 @@ class UserController extends Controller
      */
     public function show($id): Response
     {
-        $data = $this->getOneUserByIDUseCase->execute(compact('id'));
+        $data = $this->getOneUserByIdUseCase->execute(compact('id'));
         $content = UserResource::make($data);
         return $this->responseFactory->create($content);
     }

@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -10,7 +9,7 @@ use Illuminate\Support\Str;
 /**
  * @extends Factory
  */
-class ProductPurchaseTransactionFactory extends Factory
+class PurchaseTransactionHeaderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,7 +20,6 @@ class ProductPurchaseTransactionFactory extends Factory
     {
         return [
             'id' => Str::uuid()->toString(),
-            'product_id' => Product::query()->inRandomOrder()->first()->getKey(),
             'user_id' => User::query()->inRandomOrder()->first()->getKey(),
         ];
     }

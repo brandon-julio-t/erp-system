@@ -3,11 +3,11 @@
 namespace Http\Controllers;
 
 use App\Models\Product;
-use App\UseCases\Products\CreateProductUseCase;
-use App\UseCases\Products\DeleteProductUseCase;
-use App\UseCases\Products\GetAllProductsUseCase;
-use App\UseCases\Products\GetOneProductByIDUseCase;
-use App\UseCases\Products\UpdateProductUseCase;
+use App\UseCases\Product\CreateProductUseCase;
+use App\UseCases\Product\DeleteProductUseCase;
+use App\UseCases\Product\GetAllProductsUseCase;
+use App\UseCases\Product\GetOneProductByIdUseCase;
+use App\UseCases\Product\UpdateProductUseCase;
 use Laravel\Passport\Passport;
 use Mockery\MockInterface;
 use Tests\TestCase;
@@ -58,7 +58,7 @@ class ProductControllerTest extends TestCase
         $product = Product::factory()->create();
 
         $this->mock(
-            GetOneProductByIDUseCase::class,
+            GetOneProductByIdUseCase::class,
             fn(MockInterface $mock) => $this->mockUseCase($mock, $product),
         );
 

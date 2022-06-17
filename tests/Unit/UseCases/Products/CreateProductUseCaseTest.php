@@ -3,7 +3,7 @@
 namespace UseCases\Products;
 
 use App\Models\Product;
-use App\UseCases\Products\CreateProductUseCase;
+use App\UseCases\Product\CreateProductUseCase;
 use Tests\TestCase;
 
 class CreateProductUseCaseTest extends TestCase

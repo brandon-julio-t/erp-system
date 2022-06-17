@@ -3,7 +3,7 @@
 namespace Tests\Unit\UseCases\Users;
 
 use App\Models\User;
-use App\UseCases\Users\CreateUserUseCase;
+use App\UseCases\User\CreateUserUseCase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 

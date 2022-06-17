@@ -3,12 +3,12 @@
 namespace Http\Controllers;
 
 use App\Models\User;
-use App\UseCases\Users\CreateUserUseCase;
-use App\UseCases\Users\DeleteUserUseCase;
-use App\UseCases\Users\GetAllUsersUseCase;
-use App\UseCases\Users\GetCurrentUserUseCase;
-use App\UseCases\Users\GetOneUserByIDUseCase;
-use App\UseCases\Users\UpdateUserUseCase;
+use App\UseCases\User\CreateUserUseCase;
+use App\UseCases\User\DeleteUserUseCase;
+use App\UseCases\User\GetAllUsersUseCase;
+use App\UseCases\User\GetCurrentUserUseCase;
+use App\UseCases\User\GetOneUserByIdUseCase;
+use App\UseCases\User\UpdateUserUseCase;
 use Laravel\Passport\Passport;
 use Mockery\MockInterface;
 use Tests\TestCase;
@@ -77,7 +77,7 @@ class UserControllerTest extends TestCase
     public function test_show_function_is_correct()
     {
         $this->mock(
-            GetOneUserByIDUseCase::class,
+            GetOneUserByIdUseCase::class,
             fn(MockInterface $mock) => $this->mockUseCase($mock, $this->user),
         );
 

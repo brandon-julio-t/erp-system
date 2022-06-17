@@ -2,7 +2,8 @@
 
 namespace UseCases\Products;
 
-use App\UseCases\Products\GetAllProductsUseCase;
+use App\Models\Product;
+use App\UseCases\Product\GetAllProductsUseCase;
 use Illuminate\Contracts\Pagination\Paginator;
 use Tests\TestCase;
 
@@ -16,6 +17,9 @@ class GetAllProductsUseCaseTest extends TestCase
         $this->assertNotNull($products);
         $this->assertNotEmpty($products);
         $this->assertTrue($products instanceof Paginator);
+        foreach ($products->items() as $item) {
+            $this->assertTrue($item instanceof Product);
+        }
     }
 
     protected function setUp(): void

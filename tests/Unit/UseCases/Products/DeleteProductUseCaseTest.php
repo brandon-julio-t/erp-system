@@ -3,7 +3,7 @@
 namespace UseCases\Products;
 
 use App\Models\Product;
-use App\UseCases\Products\DeleteProductUseCase;
+use App\UseCases\Product\DeleteProductUseCase;
 use Tests\TestCase;
 
 class DeleteProductUseCaseTest extends TestCase

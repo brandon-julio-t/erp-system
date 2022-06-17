@@ -2,7 +2,7 @@
 
 namespace UseCases\Users;
 
-use App\UseCases\Users\GetCurrentUserUseCase;
+use App\UseCases\User\GetCurrentUserUseCase;
 use Laravel\Passport\Passport;
 use Tests\TestCase;
 

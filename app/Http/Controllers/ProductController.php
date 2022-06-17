@@ -6,25 +6,24 @@ use App\Factories\ResponseFactory;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
-use App\UseCases\Products\CreateProductUseCase;
-use App\UseCases\Products\DeleteProductUseCase;
-use App\UseCases\Products\GetAllProductsUseCase;
-use App\UseCases\Products\GetOneProductByIDUseCase;
-use App\UseCases\Products\UpdateProductUseCase;
+use App\UseCases\Product\CreateProductUseCase;
+use App\UseCases\Product\DeleteProductUseCase;
+use App\UseCases\Product\GetAllProductsUseCase;
+use App\UseCases\Product\GetOneProductByIdUseCase;
+use App\UseCases\Product\UpdateProductUseCase;
 use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
     public function __construct(
-        private readonly GetAllProductsUseCase $getAllProductsUseCase,
-        private readonly GetOneProductByIDUseCase $getOneProductUseCase,
-        private readonly CreateProductUseCase $createProductUseCase,
-        private readonly UpdateProductUseCase $updateProductUseCase,
-        private readonly DeleteProductUseCase $deleteProductUseCase,
-        private readonly ResponseFactory $responseFactory,
+        private  GetAllProductsUseCase    $getAllProductsUseCase,
+        private  GetOneProductByIdUseCase $getOneProductByIdUseCase,
+        private  CreateProductUseCase     $createProductUseCase,
+        private  UpdateProductUseCase     $updateProductUseCase,
+        private  DeleteProductUseCase     $deleteProductUseCase,
+        private  ResponseFactory          $responseFactory,
     )
     {
-        $this->middleware('auth:api');
         $this->middleware('scope:create-product')->only(['store']);
         $this->middleware('scope:read-product')->only(['index', 'show']);
         $this->middleware('scope:update-product')->only(['update']);
@@ -65,7 +64,7 @@ class ProductController extends Controller
      */
     public function show(string $id): Response
     {
-        $entity = $this->getOneProductUseCase->execute($id);
+        $entity = $this->getOneProductByIdUseCase->execute($id);
         $content = ProductResource::make($entity);
         return $this->responseFactory->create($content);
     }

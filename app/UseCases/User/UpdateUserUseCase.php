@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Users;
+namespace App\UseCases\User;
 
 use App\Contracts\UseCase;
 use Illuminate\Database\Eloquent\Builder;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UpdateUserUseCase implements UseCase
 {
-    public function __construct(private readonly GetOneUserByIDUseCase $getOneUserByIDUseCase)
+    public function __construct(private  GetOneUserByIdUseCase $getOneUserByIDUseCase)
     {
     }
 

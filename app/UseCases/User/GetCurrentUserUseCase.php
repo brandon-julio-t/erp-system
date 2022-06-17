@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Users;
+namespace App\UseCases\User;
 
 use App\Contracts\UseCase;
 use App\Models\User;

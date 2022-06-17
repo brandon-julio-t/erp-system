@@ -3,7 +3,7 @@
 namespace UseCases\Products;
 
 use App\Models\Product;
-use App\UseCases\Products\UpdateProductUseCase;
+use App\UseCases\Product\UpdateProductUseCase;
 use Tests\TestCase;
 
 class UpdateProductUseCaseTest extends TestCase
