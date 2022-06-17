@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Product;
 use App\Models\PurchaseTransactionDetail;
 use App\Models\PurchaseTransactionHeader;
+use App\Models\SaleTransactionDetail;
+use App\Models\SaleTransactionHeader;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -22,6 +24,10 @@ class DatabaseSeeder extends Seeder
         PurchaseTransactionHeader::factory()
             ->count(100)
             ->has(PurchaseTransactionDetail::factory()->count(5))
+            ->create();
+        SaleTransactionHeader::factory()
+            ->count(100)
+            ->has(SaleTransactionDetail::factory()->count(5))
             ->create();
     }
 }

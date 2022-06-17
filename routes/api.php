@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseTransactionDetailController;
 use App\Http\Controllers\PurchaseTransactionHeaderController;
+use App\Http\Controllers\SaleTransactionDetailController;
+use App\Http\Controllers\SaleTransactionHeaderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +32,11 @@ Route::middleware('auth:api')->group(function () {
         ->except(['update']);
 
     Route::apiResource('purchase-transactions.details', PurchaseTransactionDetailController::class)
-        ->except(['store', 'update', 'destroy']);
+        ->only(['index', 'show']);
+
+    Route::apiResource('sale-transactions', SaleTransactionHeaderController::class)
+        ->except(['update']);
+
+    Route::apiResource('sale-transactions.details', SaleTransactionDetailController::class)
+        ->only(['index', 'show']);
 });

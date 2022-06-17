@@ -1,12 +1,12 @@
 <?php
 
-use App\Models\User;
+use App\Models\Product;
+use App\Models\SaleTransactionHeader;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,9 +14,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('purchase_transaction_headers', function (Blueprint $table) {
+        Schema::create('sale_transaction_details', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(SaleTransactionHeader::class);
+            $table->foreignIdFor(Product::class);
+            $table->unsignedInteger('quantity');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('purchase_transaction_headers');
+        Schema::dropIfExists('sale_transaction_details');
     }
 };

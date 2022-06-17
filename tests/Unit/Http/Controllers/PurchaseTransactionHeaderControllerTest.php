@@ -2,16 +2,12 @@
 
 namespace Http\Controllers;
 
-use App\Models\Product;
 use App\Models\PurchaseTransactionDetail;
 use App\Models\PurchaseTransactionHeader;
-use App\UseCases\Product\DeleteProductUseCase;
-use App\UseCases\Product\GetOneProductByIdUseCase;
 use App\UseCases\PurchaseTransaction\CreatePurchaseTransactionUseCase;
 use App\UseCases\PurchaseTransaction\DeletePurchaseTransactionUseCase;
 use App\UseCases\PurchaseTransaction\GetAllPurchaseTransactionHeadersUseCase;
 use App\UseCases\PurchaseTransaction\GetOnePurchaseTransactionHeaderByIdUseCase;
-use App\UseCases\User\CreateUserUseCase;
 use Laravel\Passport\Passport;
 use Mockery\MockInterface;
 use Tests\TestCase;

@@ -4,11 +4,8 @@ namespace Http\Controllers;
 
 use App\Models\PurchaseTransactionDetail;
 use App\Models\PurchaseTransactionHeader;
-use App\UseCases\PurchaseTransaction\CreatePurchaseTransactionUseCase;
 use App\UseCases\PurchaseTransaction\GetAllPurchaseTransactionDetailsUseCase;
-use App\UseCases\PurchaseTransaction\GetAllPurchaseTransactionHeadersUseCase;
 use App\UseCases\PurchaseTransaction\GetOnePurchaseTransactionDetailByIdUseCase;
-use App\UseCases\PurchaseTransaction\GetOnePurchaseTransactionHeaderByIdUseCase;
 use Laravel\Passport\Passport;
 use Mockery\MockInterface;
 use Tests\TestCase;
